@@ -11,7 +11,14 @@ namespace institutemanagement.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
+
             return View();
+        }
+
+        public string aa()
+        {
+            return "hello this is my straing project";
         }
     }
 }
