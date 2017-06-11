@@ -1,22 +1,19 @@
-﻿using OnlineShopping.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Web;
+using institutemanagement.DAL;
+using System.Data.Entity;
+using System.Linq.Expressions;
 
-namespace OnlineShopping.Repository
+namespace institutemanagement.Repository
 {
-    // This is used to Isolate the EntityFramework based Data Access Layer from the MVC Controller class
-   
     public class GenericRepository<Tbl_Entity> : IRepository<Tbl_Entity> where Tbl_Entity : class
     {
         DbSet<Tbl_Entity> _dbSet;
-        private Online_ShoppingEntities _DBEntity;
+        private  IMSEntities _DBEntity;
 
-        public GenericRepository(Online_ShoppingEntities DBEntity)
+        public GenericRepository(IMSEntities DBEntity)
         {
             _DBEntity = DBEntity;
             _dbSet = _DBEntity.Set<Tbl_Entity>();
@@ -34,7 +31,7 @@ namespace OnlineShopping.Repository
         }
 
         public IEnumerable<Tbl_Entity> GetRecordsToShow(int pageNo, int pageSize, int currentPageNo, Expression<Func<Tbl_Entity, bool>> wherePredict, Expression<Func<Tbl_Entity, int>> orderByPredict)
-        {        
+        {
             if (wherePredict != null)
                 return _dbSet.OrderBy(orderByPredict).Where(wherePredict).ToList();
             else

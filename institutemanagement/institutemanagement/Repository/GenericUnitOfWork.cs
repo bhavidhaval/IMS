@@ -1,15 +1,14 @@
-﻿using OnlineShopping.DAL;
+﻿using institutemanagement.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace OnlineShopping.Repository
+namespace institutemanagement.Repository
 {
-    
     public class GenericUnitOfWork : IDisposable
     {
-        private Online_ShoppingEntities DBEntity = new Online_ShoppingEntities();
+        private IMSEntities DBEntity = new IMSEntities();
 
         public IRepository<Tbl_EntityType> GetRepositoryInstance<Tbl_EntityType>() where Tbl_EntityType : class
         {

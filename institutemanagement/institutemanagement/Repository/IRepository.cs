@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OnlineShopping.Repository
+namespace institutemanagement.Repository
 {
     public interface IRepository<Tbl_Entity> where Tbl_Entity : class
     {
