@@ -5,12 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d91a8e04fe8742429314d2340e685a3b" Name="Diagram1">
-        <EntityTypeShape EntityType="IMSModel.Member" Width="1.5" PointX="5.125" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="IMSModel.MemberRole" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="IMSModel.Role" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="IMSModel.FK_Role_MemberRole" ManuallyRouted="false" />
-        <AssociationConnector Association="IMSModel.FK_Member_MemberRole" />
-      </Diagram>
+        <EntityTypeShape EntityType="IMSModel.Member" Width="1.5" PointX="3.375" PointY="0.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

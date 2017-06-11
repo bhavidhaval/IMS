@@ -14,12 +14,6 @@ namespace institutemanagement.DAL
     
     public partial class Member
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Member()
-        {
-            this.MemberRoles = new HashSet<MemberRole>();
-        }
-    
         public int MemberId { get; set; }
         public string MemberName { get; set; }
         public string LastName { get; set; }
@@ -27,8 +21,5 @@ namespace institutemanagement.DAL
         public string Password { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MemberRole> MemberRoles { get; set; }
     }
 }

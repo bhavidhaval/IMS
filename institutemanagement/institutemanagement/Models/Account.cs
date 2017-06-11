@@ -25,9 +25,11 @@ namespace institutemanagement.Models
         [StringLength(100, ErrorMessage = "Minimum {2} and Maximum {1} characters are allowed", MinimumLength = 3)]
         public string  LastName { get; set; }
 
-        [Display (Name="Email Id")]
-        [Required(ErrorMessage ="Email Address required")]
-        [StringLength(100,ErrorMessage ="Min {5} and Maxmum 100 char allowed",MinimumLength =6)]
+        [Required(ErrorMessage = "Email address is required")]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
+        [StringLength(100, ErrorMessage = "Minimum {2} and Maximum {1} characters are allowed", MinimumLength = 5)]
+        [System.Web.Mvc.Remote("CheckEmailExist", "Account", ErrorMessage = "Email address is already used")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Password is required")]

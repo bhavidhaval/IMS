@@ -25,8 +25,7 @@ namespace institutemanagement.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Member> Members { get; set; }
-        public virtual DbSet<MemberRole> MemberRoles { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Member> Members { get; set; }
     }
 }
